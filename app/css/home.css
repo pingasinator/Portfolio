@@ -1,0 +1,203 @@
+
+#my-name{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(135deg,#7B00FF, #0098FF);
+}
+
+.contact-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.contact-link img{
+    height: 100%;
+}
+
+#presentation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.presentation-top{
+    width: 100%;
+    border: black solid 1px;
+}
+
+.presentation-bottom{
+    width: 49%;
+    border: black solid 1px;
+}
+
+#projects{
+    margin: 10px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    gap: 10px
+}
+
+.project{
+    width: 350px;
+    padding: 25px;
+}
+
+.project img{
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+#tools{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 50px;
+}
+
+.tools-rubrik{
+    width: 45%;
+}
+
+.tools-rubrik h2{
+    color: #FF0055;
+}
+
+.tools-rubrik-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tool{
+    width: 100px;
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    background: #1D2432;
+}
+
+.tool:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #A9FEF7;
+}
+
+.tool-logo{
+    height: 50px;
+}
+
+.tool-logo img{
+    height: 100%;
+}
+
+#tools{
+    display: flex;
+    flex-direction: row;
+}
+
+.tool span{
+    color: #A9FEF7;
+}
+
+
+.alias:hover {
+    transform: scale(1.05) skew(-5deg);
+}
+
+.card{
+
+    border-radius: 10px;
+    padding: 10px;
+    backdrop-filter: blur(16px);
+}
+
+
+
+.card:hover::before {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(100%);
+}
+
+/*
+This part of CSS is not mine
+ */
+
+/* From Uiverse.io by sunn_2633 */
+.cyber-pattern {
+    width: 100%;
+    height: 100%;
+    background-color: #050505; /* Fond presque noir */
+
+    /* C'est ici que la magie opère. On empile plusieurs couches : */
+    background-image:
+        /* 1. La Vignette (Ombre sur les bords pour l'effet cinéma) */
+            radial-gradient(circle at center, transparent 30%, #000 90%),
+                /* 2. GRILLE PRINCIPALE (Cyan - Grande) - Lignes Verticales & Horizontales */
+            linear-gradient(rgba(3, 233, 244, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(3, 233, 244, 0.1) 1px, transparent 1px),
+                /* 3. GRILLE SECONDAIRE (Magenta - Petite) - Lignes Verticales & Horizontales */
+            linear-gradient(rgba(217, 3, 244, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(217, 3, 244, 0.05) 1px, transparent 1px);
+
+    /* On définit la taille des grilles */
+    background-size:
+            100% 100%,
+                /* Vignette */ 60px 60px,
+                /* Grande grille Cyan (60px) */ 60px 60px,
+            20px 20px,
+                /* Petite grille Magenta (20px) */ 20px 20px;
+
+    /* On lance l'animation */
+    animation: cyber-move 2s linear infinite;
+}
+
+/* L'animation qui fait bouger les grilles */
+@keyframes cyber-move {
+    0% {
+        background-position:
+                0 0,
+                    /* Vignette (ne bouge pas) */ 0 0,
+                0 0,
+                    /* Grille Cyan (Départ) */ 0 0,
+                0 0; /* Grille Magenta (Départ) */
+    }
+    100% {
+        background-position:
+                0 0,
+                    /* Vignette */ 60px 60px,
+                60px 60px,
+                    /* Grille Cyan bouge de 60px (1 carreau) */ 40px 40px,
+                40px 40px; /* Grille Magenta bouge de 40px (plus vite/décalé) */
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn;
+    animation-timeline: view();
+}
