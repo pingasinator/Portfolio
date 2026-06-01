@@ -87,7 +87,7 @@ const others = [
 function loadProjects(){
 
     projects.map((project) => {
-        let content = `<div class="card project fade-in">
+        let content = `<div class="card project ">
                                             <img src="app/img/pfp.jpg" class="" alt="...">
                                             <div class="project-links">
                                                 <h3>${project.name}</h3>
@@ -118,7 +118,7 @@ function loadProjects(){
 function loadTools(){
 
     languages.map((language) => {
-        languages_Element.innerHTML += `<a class="tool fade-in" href="${language.link}">
+        languages_Element.innerHTML += `<a class="tool " href="${language.link}">
                                             <div class="tool-logo">
                                                 <img src="app/img/logos/${language.logo}.png" alt="${language.name}">
                                             </div>
@@ -127,7 +127,7 @@ function loadTools(){
     });
 
     frameworks.map((framework) => {
-        frameworks_Element.innerHTML += `<a class="tool fade-in" href="${framework.link}">
+        frameworks_Element.innerHTML += `<a class="tool " href="${framework.link}">
                                             <div class="tool-logo">
                                                 <img src="app/img/logos/${framework.logo}.png" alt="${framework.name}">
                                             </div>
@@ -137,7 +137,7 @@ function loadTools(){
     });
 
     editors.map((editor) => {
-        editors_Element.innerHTML += `<a class="tool fade-in" href="${editor.link}">
+        editors_Element.innerHTML += `<a class="tool " href="${editor.link}">
                                             <div class="tool-logo">
                                                 <img src="app/img/logos/${editor.logo}.png" alt="${editor.name}">
                                             </div>
@@ -146,7 +146,7 @@ function loadTools(){
     });
 
     databases.map((database) => {
-        databases_Element.innerHTML += `<a class="tool fade-in" href="${database.link}">
+        databases_Element.innerHTML += `<a class="tool " href="${database.link}">
                                             <div class="tool-logo">
                                                 <img src="app/img/logos/${database.logo}.png">
                                             </div>
@@ -155,7 +155,7 @@ function loadTools(){
     });
 
     os.map((value) => {
-        os_element.innerHTML += `<a class="tool fade-in" href="${value.link}">
+        os_element.innerHTML += `<a class="tool " href="${value.link}">
                                             <div class="tool-logo">
                                                 <img src="app/img/logos/${value.logo}.png">
                                             </div>
@@ -164,7 +164,7 @@ function loadTools(){
     })
 
     others.map((other) => {
-        others_Element.innerHTML += `<a class="tool fade-in" href="${other.link}">
+        others_Element.innerHTML += `<a class="tool " href="${other.link}">
                                             <div class="tool-logo">
                                                 <img src="app/img/logos/${other.logo}.png">
                                             </div>
