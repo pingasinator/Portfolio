@@ -13,6 +13,7 @@ const names = ['Yanni Ajil', 'Stupefix'];
 const projects = [
     {
         'name': "Mario Wonderland",
+        'screenshot': 'Mario_Wonderland',
         'badges': ['C', 'GBDK'],
         'github':'Mario-Wonderland',
         'demo':'',
@@ -20,6 +21,7 @@ const projects = [
     },
     {
         'name': "Openrefuge",
+        'screenshot': '',
         'badges': ['PHP','CSS','JavaScript','Openmairie'],
         'github':'Openrefuge',
         'demo':'https://whadafoxdoin.fr/Openrefuge/app/index.php',
@@ -27,6 +29,7 @@ const projects = [
     },
     {
         'name': "SP-Vendeurs",
+        'screenshot': '',
         'badges': ['PHP'],
         'github':'SP-vendeur',
         'demo':'',
@@ -34,6 +37,7 @@ const projects = [
     },
     {
         'name': "Pokedexweb",
+        'screenshot': '',
         'badges': ['JavaScript','Node.JS','Nodemon'],
         'github':'pokedexweb',
         'demo':'https://whadafoxdoin.fr/pokedexwebFront/',
@@ -69,10 +73,10 @@ const databases = [
 ];
 
 const os = [
-    {'name':'Windows','logo':'','link':'https://www.microsoft.com/fr-fr/windows'},
+    {'name':'Windows','logo':'Windows','link':'https://www.microsoft.com/fr-fr/windows'},
     {'name':'Debian','logo':'Debian','link':'https://www.debian.org/index.fr.html'},
-    {'name':'Proxmox','logo':'','link':'https://www.proxmox.com/en/'},
-    {'name':'Arch Linux','logo':'ArchLinux','link':'https://archlinux.org/'},
+    {'name':'Proxmox','logo':'Proxmox','link':'https://www.proxmox.com/en/'},
+    {'name':'Arch Linux','logo':'Arch_Linux','link':'https://archlinux.org/'},
 ];
 
 const others = [
@@ -88,20 +92,22 @@ function loadProjects(){
 
     projects.map((project) => {
         let content = `<div class="card project ">
-                                            <img src="app/img/pfp.jpg" class="" alt="...">
-                                            <div class="project-links">
-                                                <h3>${project.name}</h3>
-                                                <div>
-                                                    <a href="https://github.com/pingasinator/${project.github}" class="project-link">
-                                                        <img src="app/img/logos/Github.png" alt="github">
-                                                    </a>
-                                                    <a href="${project.demo}" class="project-link">
-                                                        <img src="app/img/logos/redirect.png">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <p>${project.description}</p>
-                                            <div class="badges">`;
+                                <div class="screenshot">
+                                    <img src="app/img/screenshots/${project.screenshot}.png" class="" alt="...">
+                                </div>            
+                                <div class="project-links">
+                                    <h3>${project.name}</h3>
+                                        <div>
+                                            <a href="https://github.com/pingasinator/${project.github}" class="project-link">
+                                                <img src="app/img/logos/Github.png" alt="github">
+                                            </a>
+                                            <a href="${project.demo}" class="project-link">
+                                                <img src="app/img/logos/redirect.png">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <p>${project.description}</p>
+                                    <div class="badges">`;
 
         project.badges.map((badge) => {
             content += `<div class="badge">${badge}</div>`;
@@ -148,7 +154,7 @@ function loadTools(){
     databases.map((database) => {
         databases_Element.innerHTML += `<a class="tool " href="${database.link}">
                                             <div class="tool-logo">
-                                                <img src="app/img/logos/${database.logo}.png">
+                                                <img src="app/img/logos/${database.logo}.png" alt="${database.name}">
                                             </div>
                                             <span>${database.name}</span>
                                         </a>`;
@@ -157,7 +163,7 @@ function loadTools(){
     os.map((value) => {
         os_element.innerHTML += `<a class="tool " href="${value.link}">
                                             <div class="tool-logo">
-                                                <img src="app/img/logos/${value.logo}.png">
+                                                <img src="app/img/logos/${value.logo}.png" alt="${value.name}">
                                             </div>
                                             <span>${value.name}</span>
                                         </a>`;
@@ -166,7 +172,7 @@ function loadTools(){
     others.map((other) => {
         others_Element.innerHTML += `<a class="tool " href="${other.link}">
                                             <div class="tool-logo">
-                                                <img src="app/img/logos/${other.logo}.png">
+                                                <img src="app/img/logos/${other.logo}.png" alt="${other.name}">
                                             </div>
                                             <span>${other.name}</span>
                                         </a>`;
