@@ -1,6 +1,6 @@
 
 const myName_Element = document.getElementById('my-name');
-const projects_Element = document.getElementById("projects");
+const projects_content_Element = document.getElementById("projects-content");
 const languages_Element = document.getElementById("languages");
 const frameworks_Element = document.getElementById("frameworks");
 const editors_Element = document.getElementById("editors");
@@ -14,6 +14,7 @@ const projects = [
     {
         'name': "Mario Wonderland",
         'screenshot': 'Mario_Wonderland',
+        'id':'mario-wonderland',
         'badges': ['C', 'GBDK'],
         'github':'Mario-Wonderland',
         'demo':'',
@@ -21,23 +22,26 @@ const projects = [
     },
     {
         'name': "Openrefuge",
-        'screenshot': '',
+        'screenshot': 'Openrefuge',
+        'id':'openrefuge',
         'badges': ['PHP','CSS','JavaScript','Openmairie'],
         'github':'Openrefuge',
-        'demo':'https://whadafoxdoin.fr/Openrefuge/app/index.php',
+        'demo':'https://whadafoxdoin.fr/Openrefuge/',
         'description': 'idk what to say ._.'
     },
     {
         'name': "SP-Vendeurs",
-        'screenshot': '',
-        'badges': ['PHP'],
+        'screenshot': 'spvendeurs',
+        'id':'sp-vendeurs',
+        'badges': ['PHP','SQL'],
         'github':'SP-vendeur',
-        'demo':'',
+        'demo':'https://whadafoxdoin.fr/SP-vendeur/mvc-sp',
         'description': 'idk what to say ._.'
     },
     {
         'name': "Pokedexweb",
-        'screenshot': '',
+        'screenshot': 'PokedexWeb',
+        'id':'pokedexweb',
         'badges': ['JavaScript','Node.JS','Nodemon'],
         'github':'pokedexweb',
         'demo':'https://whadafoxdoin.fr/pokedexwebFront/',
@@ -93,15 +97,15 @@ function loadProjects(){
     projects.map((project) => {
         let content = `<div class="card project ">
                                 <div class="screenshot">
-                                    <img src="app/img/screenshots/${project.screenshot}.png" class="" alt="...">
+                                    <img id="${project.id}" src="app/img/screenshots/${project.screenshot}.png" class="" alt="...">
                                 </div>            
                                 <div class="project-links">
                                     <h3>${project.name}</h3>
                                         <div>
-                                            <a href="https://github.com/pingasinator/${project.github}" class="project-link">
+                                            <a href="https://github.com/pingasinator/${project.github}" target="_blank" class="project-link">
                                                 <img src="app/img/logos/Github.png" alt="github">
                                             </a>
-                                            <a href="${project.demo}" class="project-link">
+                                            <a href="${project.demo}" target="_blank" class="project-link">
                                                 <img src="app/img/logos/redirect.png">
                                             </a>
                                         </div>
@@ -117,14 +121,14 @@ function loadProjects(){
                         
                    </div>`;
 
-        projects_Element.innerHTML += content;
+        projects_content_Element.innerHTML += content;
     })
 }
 
 function loadTools(){
 
     languages.map((language) => {
-        languages_Element.innerHTML += `<a class="tool " href="${language.link}">
+        languages_Element.innerHTML += `<a href="${language.link}" target="_blank" class="tool">
                                             <div class="tool-logo">
                                                 <img src="app/img/logos/${language.logo}.png" alt="${language.name}">
                                             </div>
@@ -133,7 +137,7 @@ function loadTools(){
     });
 
     frameworks.map((framework) => {
-        frameworks_Element.innerHTML += `<a class="tool " href="${framework.link}">
+        frameworks_Element.innerHTML += `<a href="${framework.link}" target="_blank" class="tool">
                                             <div class="tool-logo">
                                                 <img src="app/img/logos/${framework.logo}.png" alt="${framework.name}">
                                             </div>
@@ -143,7 +147,7 @@ function loadTools(){
     });
 
     editors.map((editor) => {
-        editors_Element.innerHTML += `<a class="tool " href="${editor.link}">
+        editors_Element.innerHTML += `<a href="${editor.link}" target="_blank" class="tool">
                                             <div class="tool-logo">
                                                 <img src="app/img/logos/${editor.logo}.png" alt="${editor.name}">
                                             </div>
@@ -152,7 +156,7 @@ function loadTools(){
     });
 
     databases.map((database) => {
-        databases_Element.innerHTML += `<a class="tool " href="${database.link}">
+        databases_Element.innerHTML += `<a href="${database.link}" target="_blank" class="tool">
                                             <div class="tool-logo">
                                                 <img src="app/img/logos/${database.logo}.png" alt="${database.name}">
                                             </div>
@@ -161,7 +165,7 @@ function loadTools(){
     });
 
     os.map((value) => {
-        os_element.innerHTML += `<a class="tool " href="${value.link}">
+        os_element.innerHTML += `<a href="${value.link}" target="_blank" class="tool">
                                             <div class="tool-logo">
                                                 <img src="app/img/logos/${value.logo}.png" alt="${value.name}">
                                             </div>
@@ -170,7 +174,7 @@ function loadTools(){
     })
 
     others.map((other) => {
-        others_Element.innerHTML += `<a class="tool " href="${other.link}">
+        others_Element.innerHTML += `<a href="${other.link}" target="_blank" class="tool" >
                                             <div class="tool-logo">
                                                 <img src="app/img/logos/${other.logo}.png" alt="${other.name}">
                                             </div>
