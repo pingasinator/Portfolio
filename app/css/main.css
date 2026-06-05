@@ -64,23 +64,6 @@ h3{
     align-items: center;
 }
 
-.project-links{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.project-link{
-    width: 25px;
-    height: 25px;
-}
-
-.project-link img{
-    width: 30px;
-    height: 30px;
-}
-
 p, span, a, .badge{
     color: white;
     font-family: pixelart;
@@ -108,8 +91,6 @@ h1 {
     -webkit-text-fill-color: transparent;
     background-image: -webkit-linear-gradient(orange, yellow);
 }
-
-
 
 footer{
     width: 100%;
